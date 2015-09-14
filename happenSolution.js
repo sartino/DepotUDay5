@@ -88,21 +88,16 @@ var library = (function() {
 					weekday[6] = "Sa";
 				var n = weekday[d.getDay()];
 				return String(n);
-				
-				
-				//var currentDate = new Date();
-				//var currentMonth = currentDate.getMonth() + 1;
-				//switch (currentMonth) {
-					//case 1: return "Jan";
-					//case 2: return "Feb";
-					//case 3: return "Mar";
-					//case 4: return "Apr";
-					//case 5: return "May";
-					//case 6: return "Jun";
-					//case 7: return "Jul";
-					//}
 			},
-			WeekOfYear: function(){}
+			
+			WeekOfYear: function(){
+				var d = new Date();
+    			d.setHours(0,0,0);
+    			d.setDate(d.getDate() + 4 - (d.getDay()||7));
+    			var yearStart = new Date(d.getFullYear(),0,1);
+    			var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+    		return String (weekNo);
+			}
 		}
 	})(),
 	Month: (function(){
