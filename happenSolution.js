@@ -58,8 +58,19 @@ var library = (function() {
 		return {
 			DateOfMonth: (function(){
 				return {
-					Numeral: function(){},
-					Ordinal: function(){},
+					Numeral: function(){
+						var date = new Date();
+						var monthNum = date.getDate();
+						return String(monthNum);
+					},
+					Ordinal: function(){
+						var date = new Date();
+						var monthNum = date.getDate();
+						if (monthNum <= 31){
+							monthNum = '14th'
+						};
+						return String(monthNum);
+					},
 					DateDblDigit: function(){}
 				}
 			})(),
@@ -85,6 +96,12 @@ var library = (function() {
 				return String(currentMonth);
 			},
 			CurrentMonth: function(){
+				var currentDate = new Date();
+				var currentMonth = currentDate.getMonth() + 1;
+				if (currentMonth < 10) {
+					currentMonth = 'September';
+				}
+				return String(currentMonth);
 			}
 		}
 	})(),
