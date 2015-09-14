@@ -63,10 +63,29 @@ var library = (function() {
 					DateDblDigit: function(){}
 				}
 			})(),
-			MonthNumber: function(){},
-			MonthNumberDblDigit: function(){},
-			AbrOfCurrentMonth: function(){},
-			CurrentMonth: function(){}
+			MonthNumber: function(){
+				var date = new Date();
+				var monthNum = date.getMonth() + 1;
+				return String(monthNum);
+			},
+			MonthNumberDblDigit: function(){
+				var currentDate = new Date();
+				var currentMonth = currentDate.getMonth() + 1;
+				if (currentMonth < 10) {
+					currentMonth = '0' + currentMonth;
+				}
+				return String(currentMonth);
+			},
+			AbrOfCurrentMonth: function(){
+				var currentDate = new Date();
+				var currentMonth = currentDate.getMonth() + 1;
+				if (currentMonth < 10) {
+					currentMonth = 'Sep';
+				}
+				return String(currentMonth);
+			},
+			CurrentMonth: function(){
+			}
 		}
 	})(),
 	Year: (function(){
