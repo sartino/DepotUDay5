@@ -48,9 +48,60 @@ var library = (function() {
 	})(),
 	Week: (function(){
 		return {
-			DayOfWeek: function(){},
-			AbrDayOfWeek: function(){},
-			FirstTwoOfWeek: function(){},
+			DayOfWeek: function(){
+				var d = new Date();
+				var weekday = new Array(7);
+					weekday[0] = "Sunday";
+					weekday[1] = "Monday";
+					weekday[2] = "Tueday";
+					weekday[3] = "Wednesday";
+					weekday[4] = "Thursday";
+					weekday[5] = "Friday";
+					weekday[6] = "Saturday";
+				
+				var n = weekday[d.getDay()];
+				return String(n);
+			},
+			AbrDayOfWeek: function(){
+				var d = new Date();
+				var weekday = new Array(7);
+					weekday[0] = "Sun";
+					weekday[1] = "Mon";
+					weekday[2] = "Tue";
+					weekday[3] = "Wed";
+					weekday[4] = "Thu";
+					weekday[5] = "Fri";
+					weekday[6] = "Sat";
+				
+				var n = weekday[d.getDay()];
+				return String(n);
+			},
+			FirstTwoOfWeek: function(){
+				var d = new Date();
+				var weekday = new Array(7);
+					weekday[0] = "Su";
+					weekday[1] = "Mo";
+					weekday[2] = "Tu";
+					weekday[3] = "We";
+					weekday[4] = "Th";
+					weekday[5] = "Fr";
+					weekday[6] = "Sa";
+				var n = weekday[d.getDay()];
+				return String(n);
+				
+				
+				//var currentDate = new Date();
+				//var currentMonth = currentDate.getMonth() + 1;
+				//switch (currentMonth) {
+					//case 1: return "Jan";
+					//case 2: return "Feb";
+					//case 3: return "Mar";
+					//case 4: return "Apr";
+					//case 5: return "May";
+					//case 6: return "Jun";
+					//case 7: return "Jul";
+					//}
+			},
 			WeekOfYear: function(){}
 		}
 	})(),
