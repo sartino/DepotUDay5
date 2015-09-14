@@ -158,13 +158,22 @@ var library = (function() {
 							case "2": return day + "nd";
 							case "3": return day + "rd";
 							default: return day + "th";
-						//return String(day);
+							
 						} 
 					}
 				}
 			})(),
-			YearFull: function(){},
-			YearAbr: function(){}
+			YearFull: function(){
+				var d = new Date();
+				var n = d.getFullYear();
+				return String(n);
+			},
+			YearAbr: function(){
+				var d = new Date();
+				var n = d.getFullYear();
+				var final = n.toString().substring(2);
+				return String(final);
+			}
 		}
 	})(),
 	Defaults: function(){}
