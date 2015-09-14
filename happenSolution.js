@@ -65,11 +65,14 @@ var library = (function() {
 					},
 					Ordinal: function(){
 						var date = new Date();
-						var monthNum = date.getDate();
-						if (monthNum <= 31){
-							monthNum = '10th'
-						};
-						return String(monthNum);
+						var monthNum = date.getDate().toString();
+						switch (monthNum[monthNum.length-1]){
+							case "1" : return monthNum + "st";
+							case "2": return monthNum + "nd";
+							case "3": return monthNum + "rd";
+							default: return monthNum + "th";
+						//return String(monthNum);
+						}
 					},
 					DateDblDigit: function(){}
 				}
