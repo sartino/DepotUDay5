@@ -40,8 +40,16 @@ var library = (function() {
 			TwelveHour: function() {},
 			AMPM: (function() {
 				return {
-					UpperCase: function(){},
-					LowerCase: function(){}
+					UpperCase: function(){
+						var hours = new Date().getHours();
+						var ampm = (hours >= 12) ? "PM" : "AM";
+						return String(ampm);
+					},
+					LowerCase: function(){
+						var hours = new Date().getHours();
+						var ampm = (hours >= 12) ? "pm" : "am";
+						return String(ampm);
+					}
 				}
 			})()
 		}
