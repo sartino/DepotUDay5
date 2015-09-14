@@ -71,10 +71,14 @@ var library = (function() {
 							case "2": return monthNum + "nd";
 							case "3": return monthNum + "rd";
 							default: return monthNum + "th";
-						//return String(monthNum);
+							
 						}
 					},
-					DateDblDigit: function(){}
+					DateDblDigit: function(){
+						var date = new Date();
+						var monthNum = date.getDate();
+						return String(monthNum);
+					}
 				}
 			})(),
 			MonthNumber: function(){
@@ -134,7 +138,9 @@ var library = (function() {
 		return {
 			DayOfYear: (function(){
 				return {
-					Numeral: function(){},
+					Numeral: function(){
+						
+					},
 					Ordinal: function(){}
 				}
 			})(),
