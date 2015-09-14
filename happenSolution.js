@@ -36,8 +36,14 @@ var library = (function() {
 	})(),
 	Hour: (function(){
 		return {
-			TwentyFourHour: function() {},
-			TwelveHour: function() {},
+			TwentyFourHour: function() {
+				var hours = new Date().getHours();
+				return String(hours);
+			},
+			TwelveHour: function() {
+				var hours = new Date().getHours() % 12 || 12;
+				return String(hours);
+			},
 			AMPM: (function() {
 				return {
 					UpperCase: function(){
