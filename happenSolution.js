@@ -23,8 +23,24 @@ var library = (function() {
 		})(),
 		MDY: (function(){
 	  	  return {
-		    Numeral: function(){},
-			Name: function(){}
+		    Numeral: function(){
+				var d = new Date();
+				var currDate = d.getDate();
+				var currMonth = d.getMonth();
+				currMonth++;
+				var currYear = d.getFullYear();
+				return String(currMonth + "/" + currDate + "/" + currYear);
+			},
+			Name: function(){
+				var m_names = new Array("January", "February", "March", 
+					"April", "May", "June", "July", "August", "September", 
+					"October", "November", "December");
+				var d = new Date();
+				var currDate = d.getDate();
+				var currMonth = d.getMonth();
+				var currYear = d.getFullYear();
+				return String(m_names[currMonth] + " " + currDate + ", " + currYear);
+			}
 		  }
 		  })(),
 		}
@@ -101,7 +117,7 @@ var library = (function() {
 				var weekday = new Array(7);
 					weekday[0] = "Sunday";
 					weekday[1] = "Monday";
-					weekday[2] = "Tueday";
+					weekday[2] = "Tuesday";
 					weekday[3] = "Wednesday";
 					weekday[4] = "Thursday";
 					weekday[5] = "Friday";
