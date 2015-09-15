@@ -30,8 +30,17 @@ var library = (function() {
 	})(),
 	Minute: (function(){
 		return{
-			Minute: function(){},
-			DblDigit: function(){}
+			Minute: function(){
+				var d =new Date();
+				var n = d.getMinutes();
+				return String(n);
+			},
+			DblDigit: function(){
+				var d =new Date();
+				var n = d.getMinutes();
+				return String(n);
+			
+			}
 		}
 	})(),
 	Hour: (function(){
