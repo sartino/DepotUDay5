@@ -21,10 +21,7 @@ var library = (function() {
 				function addZero (i) {
 				if (i < 10) {
 					i = "0" + i;
-				} return i;
-				}
-				//var d = new Date();
-				//return String(n);
+				} return i; }
 				var a_p = "";
 				var d = new Date();
 				var n = addZero(d.getSeconds());
@@ -312,7 +309,7 @@ var library = (function() {
 							case "2": return day + "nd";
 							case "3": return day + "rd";
 							default: return day + "th";
-							
+
 						} 
 					}
 				}
@@ -330,6 +327,50 @@ var library = (function() {
 			}
 		}
 	})(),
-	Defaults: function(){}
+	Defaults: function(){
+		var m_names = new Array("January", "February", "March", 
+					"April", "May", "June", "July", "August", "September", 
+					"October", "November", "December");
+				var d = new Date();
+				function addZero (i) {
+				if (i < 10) {
+					i = "0" + i;
+				} return i;
+				}
+				var monthNum = d.getMonth() + 1;
+				var n = addZero(d.getSeconds());
+				var currDate = d.getDate();
+				var currentMonth = d.getMonth() + 1;
+				var currYear = d.getFullYear();
+				if (currentMonth < 12) {
+					currentMonth = '0' + currentMonth;
+				}
+				
+				/*function addZero (i) {
+				if (i < 10) {
+					i = "0" + i;
+				} return i; }
+				var a_p = "";
+				var d = new Date();
+				var n = addZero(d.getSeconds());
+				var curr_hour = d.getHours();
+					if (curr_hour < 12)
+   						{a_p = "AM";}
+					else {a_p = "PM";}
+					if (curr_hour == 0) {
+   						curr_hour = 12;
+   					} if (curr_hour > 12) {
+   						curr_hour = curr_hour - 12;
+   					}
+					var curr_min = d.getMinutes();
+						curr_min = curr_min + "";
+					if (curr_min.length == 1)
+   						{curr_min = "0" + curr_min;
+   					}
+					return String(curr_hour + ":" + curr_min + ":" + n + " " + a_p);*/
+				
+				return String(currYear + "-" + currentMonth + "-" + currDate + "T" + n);
+			
+	}
   }
 })();
