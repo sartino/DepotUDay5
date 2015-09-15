@@ -2,8 +2,15 @@ var library = (function() {
   return {
 	TimeStamp: (function(){
    	  return {
-		UnixTimestamp: function(){},
-		UnixMillisecond: function(){}
+		UnixTimestamp: function(){
+			var d = new Date();
+			var seconds = d.getTime() / 1000;
+			return String(Math.floor(seconds));
+		},
+		UnixMillisecond: function(){
+			var milliseconds = (new Date).getTime();
+			return String(milliseconds);
+		}
 	  }
 	})(),
 	Local: (function(){
@@ -30,7 +37,7 @@ var library = (function() {
 				return String(n);
 			},
 			DblDigit: function(){
-				function addZero (i){
+				function addZero (i) {
 				if (i < 10) {
 					i = "0" + i;
 				} return i;
@@ -49,8 +56,13 @@ var library = (function() {
 				return String(n);
 			},
 			DblDigit: function(){
+				function addZero (i) {
+					if (i < 10) {
+						i = "0" + i;
+					} return i;
+				}
 				var d =new Date();
-				var n = d.getMinutes();
+				var n = addZero(d.getMinutes());
 				return String(n);
 			
 			}
