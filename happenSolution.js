@@ -24,8 +24,21 @@ var library = (function() {
 	})(),
 	Second: (function(){
 		return{
-			Second: function(){},
-			DblDigit: function(){}
+			Second: function(){
+				var d = new Date();
+				var n = d.getSeconds();
+				return String(n);
+			},
+			DblDigit: function(){
+				function addZero (i){
+				if (i < 10) {
+					i = "0" + i;
+				} return i;
+				}
+				var d = new Date();
+				var n = addZero(d.getSeconds());
+				return String(n);
+			}
 		}
 	})(),
 	Minute: (function(){
